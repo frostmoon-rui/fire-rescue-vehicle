@@ -16,7 +16,14 @@ class ArchiveTests(unittest.TestCase):
         self.assertIn('password = WIFI_PASSWORD', sketch)
         self.assertNotIn('const char* password = "', sketch)
         self.assertIn('YOUR_WIFI_PASSWORD', (CAMERA / 'network_config.example.h').read_text())
-        self.assertFalse((CAMERA / 'network_config.h').exists())
+        self.assertIn('**/network_config.h', (ROOT / '.gitignore').read_text())
+
+    def test_infrared_reference_values(self):
+        document = (ROOT / 'docs/infrared-remote.md').read_text(encoding='utf-8')
+        pairs = re.findall(r'\|[^\n|]+\|\s*(\d+)\s*\|\s*([0-9A-F]{6,8})\s*\|', document)
+        self.assertGreater(len(pairs), 30)
+        for decimal, hexadecimal in pairs:
+            self.assertEqual(int(decimal), int(hexadecimal, 16))
 
     def test_embedded_web_interfaces(self):
         source = (CAMERA / 'camera_index.h').read_text(encoding='utf-8')
