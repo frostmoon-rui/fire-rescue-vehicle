@@ -1,0 +1,17 @@
+**/network_config.h
+*.local
+*.log
+*.bak
+*.tmp
+.env
+.env.*
+__pycache__/
+*.py[cod]
+build/
+*.bin
+*.elf
+*.exe
+*.apk
+*.mp4
+*.docx
+*.pptx
