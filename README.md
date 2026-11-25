@@ -44,3 +44,7 @@ These checks validate repository contents, embedded web-page compression, config
 ## Attribution
 
 The camera HTTP server retains its Espressif copyright and Apache-2.0 notices. The AVI recording source retains the original version and author identifiers present in the recovered code. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and [LICENSE](LICENSE). Repository cleanup does not imply authorship of upstream components.
+
+## Project notes
+
+- [Notes on recovering the prototype](https://frostmoonrui.com/en/notes/recovering-a-prototype/)
